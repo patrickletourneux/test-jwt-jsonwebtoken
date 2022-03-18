@@ -1,4 +1,5 @@
 const client = require("../database");
+const debug = require('debug')('coreModel');
 
 class CoreModel {
     id;
@@ -151,6 +152,8 @@ class CoreModel {
      * Insère l'instance en BDD
      */
     async insert(){
+        debug('insert');
+        debug(this)
         const properties = Object.keys(this);
         //console.log("properties",properties);
         // résultat pour user : `"firstname","lastname","email","password"`
@@ -183,6 +186,7 @@ class CoreModel {
             /*  values : values */
             values
         };
+        debug(query)
 
         try{
             //console.log(query);

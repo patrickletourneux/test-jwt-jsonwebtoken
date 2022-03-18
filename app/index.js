@@ -7,6 +7,10 @@ const router = require('./routers/router');
 const app = express();
 // require('./helpers/apiDocs')(app);
 
+const multer = require('multer');
+const bodyParser = multer();
+app.use(bodyParser.none());
+
 app.use(express.static('./public'));
 // On active le middleware pour parser le payload JSON
 app.use(express.json());
@@ -14,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.engine('html', es6Renderer);
-app.set('views', './app/views');
+app.set('views', './public/views');
 app.set('view engine', 'html');
 
 

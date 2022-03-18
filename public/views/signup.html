@@ -7,15 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-  <h1>LOGIN / you have already an account</h1>
-    <form action="/api/login" method="post" class="form-login">
+    <h1>SIGNIN / you do not have account</h1>
+    <form action="/api/signup" method="post" class="form-login">
         <div class="form-login">
           <label for="email">Enter your email: </label>
           <input type="email" name="email" id="email" required>
         </div>
         <div class="form-login">
+            <label for="lastname">Enter your lastname: </label>
+            <input type="lastname" name="lastname" id="lastname" required>
+          </div>
+          <div class="form-login">
+            <label for="firstname">Enter your firstname: </label>
+            <input type="firstname" name="firstname" id="firstname" required>
+          </div>
+        <div class="form-login">
             <label for="password">Enter your password: </label>
             <input type="password" name="password" id="password" required>
+          </div>
+          <div class="form-login">
+            <label for="passwordConfirm">confirm your password: </label>
+            <input type="password" name="passwordConfirm" id="passwordConfirm" required>
           </div>
         <div class="form-login">
           <input type="submit" value="Subscribe!">

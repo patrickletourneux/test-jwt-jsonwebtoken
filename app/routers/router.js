@@ -1,5 +1,5 @@
 
-const jwt = require('jsonwebtoken');
+
 const debug = require('debug')('router');
 const express = require('express');
 const router = express.Router();
@@ -17,7 +17,8 @@ router.get('/api',(req,res)=> {
 router.get('/api/login',userController.login)
 router.post('/api/login',userController.loginAuthentification)
 
-router.get('/api/signin',userController.signin)
+router.get('/api/signup',userController.signup)
+router.post('/api/signup',userController.signupAcountCreation)
 
 router.get('/api/landingpage',verifyToken.InReqAuthorisation,userController.landingPage)
 
