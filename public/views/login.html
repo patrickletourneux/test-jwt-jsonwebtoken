@@ -26,6 +26,7 @@
   <h2>apres auhentification et donc generation du token aller a landing page, si pas authentifié on reste sur la page
     login</h2>
   <a href="#"><button id="linkLandingPage">/api/landingpage</button></a>
+  <!-- <a href="/api/landingpage"><button id="linkLandingPagesansfetch">/api/landingpage sans fetch</button></a> -->
   <script>
     // recuperation du token en front et sauvegarde dans le localStorage
     // a la submission du form
@@ -37,7 +38,7 @@
       const formData = new FormData(event.target);
       console.log('formData:', formData)
       const response = await fetch(url, {
-        method: 'POST', // par défaut c'est du GET, donc on précise POST ici pour l'ajout d'une liste
+        method: 'POST',
         body: formData // on oublie pas de lui envoyer les infos
       });
       const responsejson = await response.json();
@@ -48,6 +49,7 @@
 
     document.getElementById("linkLandingPage").addEventListener('click', async (event) => {
       console.log('click landingpage')
+      event.preventDefault()
       const token = localStorage.getItem('token');
       console.log('token:', token)
 
@@ -71,7 +73,8 @@
 
       /* On effectue la requête */
       const url = 'http://localhost:5000/api/landingpage'
-      await fetch(url, options);
+      fetch(url, options);
+      // const responses = await fetch(url, options);
 
     })
 

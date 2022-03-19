@@ -1,20 +1,26 @@
 const debug = require('debug')('userController');
 const jwt = require('jsonwebtoken');
 const User = require("../models/Users");
+const path= require('path')
 const validator = require("email-validator");
 const bcrypt = require("bcrypt");
 
+
+
 module.exports = {
     async login(req, res) {
-        res.render('login')
+        res.render('login');
     },
     async signup(req, res) {
-        res.render('signup')
+        res.render('signup');
+        debug('afer render signup');
     },
     async landingPage(req, res) {
-        debug('landingpage')
-        debug('req.token:', req.token)
-        res.render('landingpage')
+        debug('landingpage');
+        debug('req.token:', req.token);
+        res.render('landingpage');
+        // res.sendFile(path.join( __dirname, "../../public/views/landingpage.html"));
+        debug('afer render landingpage')
     },
     async loginAuthentification(req, res) {
         // debug(req.body)

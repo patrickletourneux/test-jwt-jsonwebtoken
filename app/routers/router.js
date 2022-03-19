@@ -21,6 +21,7 @@ router.get('/api/signup',userController.signup)
 router.post('/api/signup',userController.signupAcountCreation)
 
 router.get('/api/landingpage',verifyToken.InReqAuthorisation,userController.landingPage)
+// router.get('/api/landingpage',userController.landingPage)
 
 router.post('/api/posts',verifyToken.InReqAuthorisation,userController.postTest)
 
