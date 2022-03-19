@@ -25,11 +25,11 @@
   </form>
   <h2>apres auhentification et donc generation du token aller a landing page, si pas authentifié on reste sur la page
     login</h2>
-  <a href="/api/landingpage"><button id="linkLandingPage">/api/landingpage</button></a>
+  <a href="#"><button id="linkLandingPage">/api/landingpage</button></a>
   <script>
     // recuperation du token en front et sauvegarde dans le localStorage
     // a la submission du form
-    console.log('dans login.html')
+    console.log('click submit')
     document.getElementById("formulaire").addEventListener('submit', async (event) => {
       event.preventDefault();
       const url = 'http://localhost:5000/api/login';
@@ -47,7 +47,9 @@
     })
 
     document.getElementById("linkLandingPage").addEventListener('click', async (event) => {
+      console.log('click landingpage')
       const token = localStorage.getItem('token');
+      console.log('token:', token)
 
       if (!token) {
         /* Traitement dans le cas où aucun token n'existe dans le localStorage */
@@ -55,7 +57,7 @@
       }
 
       /* Le localStorage stocke les données sous forme de chaines de caractères nous transformons donc la donnée en JSON */
-      token = JSON.parse(token);
+      // token = JSON.parse(token);
 
       /* On créer l'en-tête Authorization contenant le JWT */
       const headers = new Headers();
@@ -68,8 +70,8 @@
       };
 
       /* On effectue la requête */
-      const url = 'https://api/landingpage'
-      fetch(url, options);
+      const url = 'http://localhost:5000/api/landingpage'
+      await fetch(url, options);
 
     })
 

@@ -12,7 +12,9 @@ module.exports = {
         res.render('signup')
     },
     async landingPage(req, res) {
-        res.render('landingpageneedtokenvalid')
+        debug('landingpage')
+        debug('req.token:', req.token)
+        res.render('landingpage')
     },
     async loginAuthentification(req, res) {
         // debug(req.body)
