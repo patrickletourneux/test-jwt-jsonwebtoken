@@ -8,20 +8,20 @@ const bcrypt = require("bcrypt");
 
 
 module.exports = {
-    async login(req, res) {
-        res.render('login');
-    },
-    async signup(req, res) {
-        res.render('signup');
-        debug('afer render signup');
-    },
-    async landingPage(req, res) {
-        debug('landingpage');
-        debug('req.token:', req.token);
-        res.render('landingpage');
-        // res.sendFile(path.join( __dirname, "../../public/views/landingpage.html"));
-        debug('afer render landingpage')
-    },
+    // async login(req, res) {
+    //     res.render('login');
+    // },
+    // async signup(req, res) {
+    //     res.render('signup');
+    //     debug('afer render signup');
+    // },
+    // async landingPage(req, res) {
+    //     debug('landingpage');
+    //     debug('req.token:', req.token);
+    //     res.render('landingpage');
+    //     // res.sendFile(path.join( __dirname, "../../public/views/landingpage.html"));
+    //     debug('afer render landingpage')
+    // },
     async loginAuthentification(req, res) {
         // debug(req.body)
         const form = req.body;
@@ -44,15 +44,14 @@ module.exports = {
 
             } else {
                 // sinon je lui envoie un message d'erreur
-                res.render("login", {
-                    error: "il y a une erreur dans le couple login/mot de passe"
-                });
+                debug('password nok')
+                res.status(400).json("il y a une erreur dans le couple login/mot de passe")
+                
             }
         } else {
             // sinon j'envoie un message d'erreur
-            res.render("login", {
-                error: "il y a une erreur dans le couple login/mot de passe"
-            });
+            debug('user nok')
+            res.status(400).json("il y a une erreur dans le couple login/mot de passe")
         }
     },
     async signupAcountCreation(req, res) {

@@ -21,11 +21,11 @@ const app = {
                 console.log('click signupPage')
                 signupPageModule.init()
             });
-        document.getElementById('landingPage')
-            .addEventListener('click', (event) => {
-                console.log('click landingPage')
-                landingPageModule.init()
-            });
+        // document.getElementById('landingPage')
+        //     .addEventListener('click', (event) => {
+        //         console.log('click landingPage')
+        //         landingPageModule.init()
+        //     });
     },
     
 }

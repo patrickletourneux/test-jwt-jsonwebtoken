@@ -7,20 +7,20 @@ const verifyToken = require('../middlewares/verifyToken')
 
 const userController = require('../controllers/userController');
 
-router.get('/api',(req,res)=> {
-    res.json({
-        message:'welcome'
-    });
-});
+// router.get('/api',(req,res)=> {
+//     res.json({
+//         message:'welcome'
+//     });
+// });
 
 
-router.get('/api/login',userController.login)
+// router.get('/api/login',userController.login)
 router.post('/api/login',userController.loginAuthentification)
 
-router.get('/api/signup',userController.signup)
+// router.get('/api/signup',userController.signup)
 router.post('/api/signup',userController.signupAcountCreation)
 
-router.get('/api/landingpage',verifyToken.InReqAuthorisation,userController.landingPage)
+// router.get('/api/landingpage',verifyToken.InReqAuthorisation,userController.landingPage)
 // router.get('/api/landingpage',userController.landingPage)
 
 router.post('/api/posts',verifyToken.InReqAuthorisation,userController.postTest)
