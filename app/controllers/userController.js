@@ -87,22 +87,15 @@ module.exports = {
                     debug('newUsertosave', newUser)
                     const userSaved = await newUser.save();
                     debug('userSaved', userSaved)
-                    res.redirect("/api/login");
+                    res.status(200).json('userSaved');
                 } else {
-                    res.render("signup", {
-                        error: "le mot de passe et sa confirmation ne sont pas identiques"
-                    });
+                    res.status(400).json("il y a une erreur de password")
                 }
             } else {
-                res.render("signup", {
-                    error: "le format de l'adresse mail est incorrect"
-                });
+                res.status(400).json("il y a une d email ")
             }
         } else {
-            // sinon j'envoie un message d'erreur
-            res.render("signup", {
-                error: "email déjà utilisé"
-            });
+            res.status(400).json("erreur user deja existant ")
         }
     },
 
