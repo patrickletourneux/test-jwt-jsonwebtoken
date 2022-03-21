@@ -8,20 +8,6 @@ const bcrypt = require("bcrypt");
 
 
 module.exports = {
-    // async login(req, res) {
-    //     res.render('login');
-    // },
-    // async signup(req, res) {
-    //     res.render('signup');
-    //     debug('afer render signup');
-    // },
-    // async landingPage(req, res) {
-    //     debug('landingpage');
-    //     debug('req.token:', req.token);
-    //     res.render('landingpage');
-    //     // res.sendFile(path.join( __dirname, "../../public/views/landingpage.html"));
-    //     debug('afer render landingpage')
-    // },
     async loginAuthentification(req, res) {
         // debug(req.body)
         const form = req.body;

@@ -21,13 +21,13 @@ const app = {
                 console.log('click signupPage')
                 signupPageModule.init()
             });
-        // document.getElementById('landingPage')
-        //     .addEventListener('click', (event) => {
-        //         console.log('click landingPage')
-        //         landingPageModule.init()
-        //     });
+        document.getElementById('disconnect')
+            .addEventListener('click', (event) => {
+                console.log('click disconnect')
+                disconnectModule.init()
+            });
     },
-    
+
 }
 
 app.init()
