@@ -84,7 +84,13 @@ module.exports = {
             res.status(400).json("erreur user deja existant ")
         }
     },
-
+    disconnect(req,res){
+        debug('disconnect');
+        // debug(req.headers['token']);
+        debug(req.token);
+        debug('USER activ to suppress'); // need to deactiv the user session
+        res.status(200).json('token to invalid');
+    },
     async postTest(req, res) {
         res.json({
             message: "token is valid"

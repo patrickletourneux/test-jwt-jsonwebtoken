@@ -48,8 +48,8 @@ const loginPageModule = {
             const responsejson = await response.json();
             console.log('response.status', response.status)
             // console.log('responsejson.token:', responsejson.token)
-            // window.localStorage.setItem('token', responsejson.token)
-            // console.log('window.localStorage:', window.localStorage)
+            window.localStorage.setItem('token', responsejson.token)
+            console.log('window.localStorage:', window.localStorage)
 
             if (response.status === 200){
                 landingPageModule.init()

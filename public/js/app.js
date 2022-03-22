@@ -24,7 +24,7 @@ const app = {
         document.getElementById('disconnect')
             .addEventListener('click', (event) => {
                 console.log('click disconnect')
-                disconnectModule.init()
+                disconnectModule.disconnect()
             });
     },
 

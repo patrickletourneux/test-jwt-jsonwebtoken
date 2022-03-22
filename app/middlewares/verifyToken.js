@@ -14,8 +14,8 @@ module.exports = {
             debug('req.token:', req.token)
             jwt.verify(req.token, process.env.SECRETKEYJWT, (err, authData) => {
                 if (err) {
-                    debug('token is not valid')
-                    res.render('login');
+                    debug('no token received in backend')
+                    res.status(400).json('no token received in backend');
                 } else {
                     debug('token is valid')
                     next();
@@ -23,7 +23,7 @@ module.exports = {
             })
         } else {
             debug('no token received in backend')
-            res.render('login');
+            res.status(400).json('no token received in backend');
         }
     }
 }
