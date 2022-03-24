@@ -8,13 +8,17 @@ il faut gérer l authentification autrement
 
 je teste le json web token avec le package jsonwebtoken
 
+
+## route /api/signup
+permet de creer un user en bdd postgresql
+
 ## route /api/login
+verifie si user / password ok et
 permet de generer un token en back et de le renvoyer au front
 
-## route /api/posts
-il faut ajouter le token au Header.authorization si on veut avoir le message "token valid" 
-sinon token invalid le middleware de checkToken nous redirige sur la page de login
+token stocké dans localstorage
 
-## route /api/landingpage
-il faut ajouter le token au Header.authorization si on veut acceder a la page 
-sinon token invalid le middleware de checkToken nous redirige sur la page de login
+## route /api/desisconnect 
+envoie le token au back et coté back on verifie le token se deconnecter
+
+
