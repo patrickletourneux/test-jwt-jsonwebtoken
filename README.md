@@ -1,24 +1,28 @@
 # test jwt authentification
-API nodejs / express pour test 
+API nodejs / express for test 
 
 "jsonwebtoken": "^8.5.1"
 
-express session ne fonctionnera pas si des appel fetch sont effectués en front
-il faut gérer l authentification autrement
+express session will not be usable with fetch on front end
+need to manage authentification in an other way
 
-je teste le json web token avec le package jsonwebtoken
+i test json web token with package jsonwebtoken
 
+bdd postgresql 
 
 ## route /api/signup
-permet de creer un user en bdd postgresql
+to create a user in bdd postgresql
 
 ## route /api/login
-verifie si user / password ok et
-permet de generer un token en back et de le renvoyer au front
+to check user / password , if ok 
+back end generate a token and send it to the front
+and show landing page
+token is stored in localstorage on front end
 
-token stocké dans localstorage
 
 ## route /api/desisconnect 
-envoie le token au back et coté back on verifie le token se deconnecter
+send token to the back wich is verified in a middleware
+and disconnect the user
+
 
 
