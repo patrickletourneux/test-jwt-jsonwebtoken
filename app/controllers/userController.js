@@ -22,6 +22,7 @@ module.exports = {
                 debug('user et password ok')
                 jwt.sign({user:user},process.env.SECRETKEYJWT,{expiresIn:'200s'} , (err,token)=>{
                     debug('token generation')
+                    debug(token)
                     res.json({
                         token:token
                     });

@@ -14,10 +14,19 @@ module.exports = {
             debug('req.token:', req.token)
             jwt.verify(req.token, process.env.SECRETKEYJWT, (err, authData) => {
                 if (err) {
-                    debug('no token received in backend')
-                    res.status(400).json('no token received in backend');
+                    debug('token non valid')
+                    res.status(400).json('token non valid');
                 } else {
                     debug('token is valid')
+                    // get the decoded payload ignoring signature, no secretOrPrivateKey needed
+                    // var decoded = jwt.decode(req.token);
+
+                    // get the decoded payload and header
+                    var decoded = jwt.decode(req.token, {
+                        complete: true
+                    });
+                    console.log(decoded.header);
+                    console.log(decoded.payload)
                     next();
                 }
             })
