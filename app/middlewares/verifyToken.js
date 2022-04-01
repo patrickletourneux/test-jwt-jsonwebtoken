@@ -18,6 +18,7 @@ module.exports = {
                     res.status(400).json('token non valid');
                 } else {
                     debug('token is valid')
+                    debug(req.token)
                     // get the decoded payload ignoring signature, no secretOrPrivateKey needed
                     // var decoded = jwt.decode(req.token);
 
@@ -25,8 +26,8 @@ module.exports = {
                     var decoded = jwt.decode(req.token, {
                         complete: true
                     });
-                    console.log(decoded.header);
-                    console.log(decoded.payload)
+                    debug(decoded.header);
+                    debug(decoded.payload)
                     next();
                 }
             })
